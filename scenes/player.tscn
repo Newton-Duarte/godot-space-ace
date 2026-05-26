@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://c22bjglriiwa2"]
 
 [ext_resource type="Texture2D" uid="uid://7kl4i7bh7qvd" path="res://assets/player.png" id="1_3vyb7"]
+[ext_resource type="PackedScene" uid="uid://gj2sh4m1esm4" path="res://components/player_movement.tscn" id="2_g2els"]
 
 [node name="Player" type="Node2D" unique_id=455540148]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1641461582]
 texture = ExtResource("1_3vyb7")
+
+[node name="PlayerMovement" parent="." unique_id=363524622 instance=ExtResource("2_g2els")]
