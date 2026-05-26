@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://fujsbvhro6q5"]
+
+[ext_resource type="Texture2D" uid="uid://dg0ie4yrl36nc" path="res://textures/ParticleDot16.png" id="1_yqnq4"]
+
+[sub_resource type="Curve" id="Curve_yqnq4"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.54509807, 0.70943713), 0.98007387, 0.98007387, 0, 0, Vector2(0.9607844, 0.16059601), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_efm6w"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.09803922)
+
+[sub_resource type="Gradient" id="Gradient_653i6"]
+offsets = PackedFloat32Array(0, 0.5458515, 0.98253274)
+colors = PackedColorArray(0.45490196, 0.9098039, 0.9098039, 1, 0.18039216, 0.5882353, 1, 1, 1, 1, 1, 0.41960785)
+
+[node name="PlayerThrust" type="CPUParticles2D" unique_id=1550335445]
+amount = 64
+texture = ExtResource("1_yqnq4")
+lifetime = 0.6
+lifetime_randomness = 0.75
+emission_shape = 1
+emission_sphere_radius = 6.0
+direction = Vector2(0, 1)
+spread = 5.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 130.0
+scale_amount_min = 0.7
+scale_amount_max = 1.4
+scale_amount_curve = SubResource("Curve_yqnq4")
+color_ramp = SubResource("Gradient_efm6w")
+color_initial_ramp = SubResource("Gradient_653i6")
