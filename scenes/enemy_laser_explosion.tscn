@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://caerrxfoh4agp"]
+
+[ext_resource type="PackedScene" uid="uid://cgxi6yvevjlef" path="res://scenes/explosion.tscn" id="1_cw88j"]
+[ext_resource type="AudioStream" uid="uid://calwbu8hvj424" path="res://audio/252198__pepingrillin__rocket_impact_short.wav" id="2_1btma"]
+[ext_resource type="Texture2D" uid="uid://c7musjvyelcm6" path="res://textures/MagicSmall.png" id="2_w1kvh"]
+
+[sub_resource type="Curve" id="Curve_w1kvh"]
+_data = [Vector2(0.003921576, 0.042218566), 0.0, 0.0, 0, 0, Vector2(0.20000002, 1), 0.0, 0.0, 0, 0, Vector2(0.5254902, 1), 0.0, 0.0, 0, 0, Vector2(0.72941184, 0.5695365), 0.0, 0.0, 0, 0, Vector2(0.9882354, 0.009933829), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="Gradient" id="Gradient_6i555"]
+offsets = PackedFloat32Array(0.5327511, 1)
+colors = PackedColorArray(4.3403955, 1.3668355, 0.9257029, 1, 0.8352941, 0.23137255, 0.14509805, 1)
+
+[node name="Explosion" unique_id=1688605985 instance=ExtResource("1_cw88j")]
+
+[node name="CPUParticles2D" parent="." index="0" unique_id=1114078483]
+amount = 32
+texture = ExtResource("2_w1kvh")
+lifetime = 0.8
+explosiveness = 0.7
+randomness = 0.3
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+angular_velocity_min = -360.0
+angular_velocity_max = 360.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_w1kvh")
+color_ramp = SubResource("Gradient_6i555")
+
+[node name="Sound" parent="." index="1" unique_id=169684541]
+stream = ExtResource("2_1btma")
