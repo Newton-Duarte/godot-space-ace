@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://fujsbvhro6q5" path="res://scenes/player_thrust.tscn" id="1_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://gj2sh4m1esm4" path="res://components/player_movement.tscn" id="2_g2els"]
 
-[node name="Player" type="Node2D" unique_id=455540148]
+[node name="Player" type="Node2D" unique_id=455540148 groups=["player"]]
 
 [node name="PlayerThrust" parent="." unique_id=1550335445 instance=ExtResource("1_qhqgy")]
 position = Vector2(40, 28)
