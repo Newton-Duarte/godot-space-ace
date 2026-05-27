@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dyeeysq7tfr4x"]
+
+[ext_resource type="PackedScene" uid="uid://cgxi6yvevjlef" path="res://scenes/explosion.tscn" id="1_2arux"]
+[ext_resource type="Texture2D" uid="uid://h88fbeajkf8k" path="res://textures/scorch_02.png" id="2_7e24b"]
+[ext_resource type="AudioStream" uid="uid://cyob68k8wm2x0" path="res://audio/93834__cgeffex__huge-explosion.wav" id="2_l82t4"]
+[ext_resource type="AudioStream" uid="uid://sf8fma1ls4je" path="res://audio/AsteroidExplosion.wav" id="3_7e24b"]
+
+[sub_resource type="Curve" id="Curve_7e24b"]
+_data = [Vector2(0.007843144, 0.0637418), 0.0, 0.0, 0, 0, Vector2(0.1647059, 0.58029807), 0.0, 0.0, 0, 0, Vector2(0.31372553, 1), 0.0, 0.0, 0, 0, Vector2(0.6313726, 0.9892385), 0.0, 0.0, 0, 0, Vector2(0.9921569, 0.031456947), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="Gradient" id="Gradient_6tad4"]
+offsets = PackedFloat32Array(0, 0.4323144, 0.8515284, 1)
+colors = PackedColorArray(1, 1, 1, 1, 2.9203846, 1.7590973, 0.7637078, 1, 2.4973502, 1.5011723, 0.6473055, 1, 0.94509804, 0.5686275, 0.20784314, 0.12941177)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6tad4"]
+streams_count = 2
+stream_0/stream = ExtResource("2_l82t4")
+stream_1/stream = ExtResource("3_7e24b")
+
+[node name="Explosion" unique_id=1688605985 instance=ExtResource("1_2arux")]
+
+[node name="CPUParticles2D" parent="." index="0" unique_id=1114078483]
+emitting = false
+amount = 48
+texture = ExtResource("2_7e24b")
+lifetime = 1.2
+one_shot = true
+explosiveness = 0.65
+randomness = 0.25
+emission_shape = 2
+emission_sphere_radius = 26.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 40.0
+radial_accel_min = 20.0
+radial_accel_max = 30.0
+angle_max = 360.0
+scale_amount_min = 0.25
+scale_amount_max = 0.75
+scale_amount_curve = SubResource("Curve_7e24b")
+color_ramp = SubResource("Gradient_6tad4")
+
+[node name="Sound" parent="." index="1" unique_id=169684541]
+stream = SubResource("AudioStreamRandomizer_6tad4")
