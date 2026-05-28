@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bly8686q3okd2"]
+
+[ext_resource type="Script" uid="uid://hntaiy0r18rq" path="res://scripts/test_poolable.gd" id="1_xicy8"]
+
+[node name="TestPoolable" type="Node2D" unique_id=1202047795]
+script = ExtResource("1_xicy8")
+
+[node name="Label" type="Label" parent="." unique_id=1709607958]
+offset_left = -18.0
+offset_top = -20.0
+offset_right = 23.0
+offset_bottom = 14.0
+theme_override_font_sizes/font_size = 24
+text = "000"
+
+[node name="Timer" type="Timer" parent="." unique_id=1974948430]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
