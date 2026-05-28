@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://0bludppfa3yo"]
 
 [ext_resource type="Script" uid="uid://qw2vafh7i3yl" path="res://scripts/enemy_base.gd" id="1_fr7lv"]
+[ext_resource type="PackedScene" uid="uid://d4ih875r0p442" path="res://components/shooter.tscn" id="2_sw0xa"]
 
 [node name="EnemyBase" type="PathFollow2D" unique_id=1164430472]
 rotates = false
@@ -8,3 +9,5 @@ loop = false
 script = ExtResource("1_fr7lv")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1796602338]
+
+[node name="Shooter" parent="." unique_id=569511834 instance=ExtResource("2_sw0xa")]
