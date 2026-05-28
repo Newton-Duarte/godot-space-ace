@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://crcuu1k1kum1u"]
+
+[ext_resource type="PackedScene" uid="uid://curultvrsys0k" path="res://scenes/base_projectile.tscn" id="1_0d1jq"]
+[ext_resource type="Texture2D" uid="uid://ccnybi2trj1mg" path="res://assets/Bomb.png" id="2_g2xqj"]
+[ext_resource type="PackedScene" uid="uid://qgqgfni44eg" path="res://scenes/targeted_mover.tscn" id="3_r8orn"]
+
+[node name="EnemyBomb" unique_id=765454734 instance=ExtResource("1_0d1jq")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=1877476279]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_g2xqj")
+
+[node name="ScreenNotifier2D" parent="." index="1" unique_id=180808974]
+rect = Rect2(-28, -40, 56, 81)
+
+[node name="TargetedMover" parent="." index="3" unique_id=14914055 instance=ExtResource("3_r8orn")]
+speed = 100.0
