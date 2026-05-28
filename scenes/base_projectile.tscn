@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://curultvrsys0k"]
+
+[ext_resource type="Script" uid="uid://cplmh8wlsmjul" path="res://scripts/base_projectile.gd" id="1_kg56o"]
+
+[node name="BaseProjectile" type="Node2D" unique_id=765454734]
+script = ExtResource("1_kg56o")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1877476279]
+
+[node name="ScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=180808974]
+
+[node name="LifeTimer" type="Timer" parent="." unique_id=116581304]
+wait_time = 15.0
+one_shot = true
+
+[connection signal="screen_exited" from="ScreenNotifier2D" to="." method="_on_screen_exited"]
+[connection signal="timeout" from="LifeTimer" to="." method="_on_life_timer_timeout"]
