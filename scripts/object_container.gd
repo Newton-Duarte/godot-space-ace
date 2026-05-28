@@ -14,6 +14,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			test_scene
 		)
 
+func _enter_tree() -> void:
+	SignalHub.on_spawn_pool_object.connect(on_spawn_pool_object)
+
 func on_spawn_pool_object(position: Vector2, scene: PackedScene) -> void:
 	call_deferred("spawn_deferred", position, scene)
 
@@ -22,8 +25,3 @@ func spawn_deferred(position: Vector2, scene: PackedScene) -> void:
 		var new_pool: ScenePool = ScenePool.new(5, scene, self)
 		_pools[scene] = new_pool
 	_pools[scene].activate_next(position)
-	
-	#var new_scene: Poolable = scene.instantiate()
-	#new_scene.global_position = position
-	#add_child(new_scene)
-	#new_scene.activate()
