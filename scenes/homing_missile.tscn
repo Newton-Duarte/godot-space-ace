@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bygy8lgvcpnlh"]
+
+[ext_resource type="PackedScene" uid="uid://curultvrsys0k" path="res://scenes/base_projectile.tscn" id="1_w5y2q"]
+[ext_resource type="Texture2D" uid="uid://cp6fv43v82q2q" path="res://assets/HomingMissile.png" id="2_a6ut0"]
+[ext_resource type="PackedScene" uid="uid://tscimoyisy4v" path="res://components/homing_mover.tscn" id="2_j864u"]
+
+[node name="HomingMissile" unique_id=765454734 instance=ExtResource("1_w5y2q")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=1877476279]
+rotation = 1.5707964
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_a6ut0")
+
+[node name="ScreenNotifier2D" parent="." index="1" unique_id=180808974]
+rect = Rect2(-48, -38, 96, 76)
+
+[node name="HomingMover" parent="." index="3" unique_id=951331602 instance=ExtResource("2_j864u")]
+speed = 150.0
+rotation_speed_degrees = 90.0
