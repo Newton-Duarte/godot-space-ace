@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://hd0o6tbhctvu"]
+
+[ext_resource type="PackedScene" uid="uid://curultvrsys0k" path="res://scenes/base_projectile.tscn" id="1_im30v"]
+[ext_resource type="Texture2D" uid="uid://drne10xh8ap43" path="res://assets/LaserOrange.png" id="2_iyr3e"]
+[ext_resource type="PackedScene" uid="uid://3bw2ixluatdm" path="res://components/mover.tscn" id="3_x6ppl"]
+
+[node name="EnemyLaser" unique_id=765454734 instance=ExtResource("1_im30v")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=1877476279]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_iyr3e")
+
+[node name="ScreenNotifier2D" parent="." index="1" unique_id=180808974]
+rect = Rect2(-8, -42, 16, 84)
+
+[node name="Mover" parent="." index="3" unique_id=1332889373 instance=ExtResource("3_x6ppl")]
+speed = 150.0
+direction = Vector2(0, 1)
