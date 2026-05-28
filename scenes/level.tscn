@@ -2,8 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://c22bjglriiwa2" path="res://scenes/player.tscn" id="1_2q6dc"]
 [ext_resource type="PackedScene" uid="uid://b6k60qki27eml" path="res://scenes/background.tscn" id="1_w7c3h"]
-[ext_resource type="Texture2D" uid="uid://c36pf037de14s" path="res://assets/Enemy3.png" id="3_mx8sn"]
-[ext_resource type="PackedScene" uid="uid://qgqgfni44eg" path="res://scenes/targeted_mover.tscn" id="4_mx8sn"]
+[ext_resource type="PackedScene" uid="uid://crkdc7a01k4at" path="res://scenes/object_container.tscn" id="3_w8frs"]
+[ext_resource type="PackedScene" uid="uid://caerrxfoh4agp" path="res://scenes/enemy_laser_explosion.tscn" id="4_mx8sn"]
+[ext_resource type="PackedScene" uid="uid://bla3hcybrui4s" path="res://scenes/enemy_vee.tscn" id="5_2r41h"]
+[ext_resource type="PackedScene" uid="uid://ceb6swttqtsst" path="res://scenes/enemy_robot.tscn" id="6_klq6b"]
+
+[sub_resource type="Curve2D" id="Curve2D_b121j"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 131, 224, 0, 0, 0, 0, 1188, 232)
+}
+point_count = 2
 
 [node name="Level" type="Node" unique_id=327320080]
 
@@ -12,9 +20,15 @@
 [node name="Player" parent="." unique_id=455540148 instance=ExtResource("1_2q6dc")]
 position = Vector2(725, 921)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1922577815]
-position = Vector2(558, 122)
-texture = ExtResource("3_mx8sn")
+[node name="ObjectContainer" parent="." unique_id=454700869 instance=ExtResource("3_w8frs")]
+test_scene = ExtResource("4_mx8sn")
 
-[node name="TargetedMover" parent="Sprite2D" unique_id=14914055 instance=ExtResource("4_mx8sn")]
-speed = 150.0
+[node name="Path2D" type="Path2D" parent="." unique_id=921453742]
+curve = SubResource("Curve2D_b121j")
+
+[node name="EnemyVee" parent="Path2D" unique_id=1164430472 instance=ExtResource("5_2r41h")]
+position = Vector2(230.99026, 224.75679)
+progress = 100.0
+
+[node name="EnemyRobot" parent="Path2D" unique_id=1084638130 instance=ExtResource("6_klq6b")]
+position = Vector2(131, 224)
