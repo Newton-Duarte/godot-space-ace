@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://7kl4i7bh7qvd" path="res://assets/player.png" id="1_3vyb7"]
 [ext_resource type="PackedScene" uid="uid://fujsbvhro6q5" path="res://scenes/player_thrust.tscn" id="1_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://gj2sh4m1esm4" path="res://components/player_movement.tscn" id="2_g2els"]
+[ext_resource type="PackedScene" uid="uid://dheetnl5u5hd8" path="res://components/manual_shooter.tscn" id="4_qlg0r"]
+[ext_resource type="PackedScene" uid="uid://cbqlyggxjcsi3" path="res://scenes/player_laser.tscn" id="5_tuyoq"]
 
 [node name="Player" type="Node2D" unique_id=455540148 groups=["player"]]
 
@@ -16,3 +18,7 @@ position = Vector2(-40, 28)
 texture = ExtResource("1_3vyb7")
 
 [node name="PlayerMovement" parent="." unique_id=363524622 instance=ExtResource("2_g2els")]
+
+[node name="ManualShooter" parent="." unique_id=773160372 instance=ExtResource("4_qlg0r")]
+position = Vector2(0, -64)
+shoot_scene = ExtResource("5_tuyoq")
