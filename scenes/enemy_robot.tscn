@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://0bludppfa3yo" path="res://scenes/enemy_base.tscn" id="1_dnvfw"]
 [ext_resource type="Texture2D" uid="uid://c36pf037de14s" path="res://assets/Enemy3.png" id="2_7rng4"]
+[ext_resource type="PackedScene" uid="uid://crcuu1k1kum1u" path="res://scenes/enemy_bomb.tscn" id="3_feek3"]
+[ext_resource type="AudioStream" uid="uid://c1dwv2n4x0miq" path="res://audio/685916_whoosh.wav" id="4_wcvhe"]
 
 [node name="EnemyRobot" unique_id=1164430472 instance=ExtResource("1_dnvfw")]
 speed = 75.0
@@ -9,3 +11,8 @@ speed = 75.0
 [node name="Sprite2D" parent="." index="0" unique_id=1796602338]
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("2_7rng4")
+
+[node name="Shooter" parent="." index="1" unique_id=569511834]
+position = Vector2(0, 38)
+shoot_scene = ExtResource("3_feek3")
+shoot_sound = ExtResource("4_wcvhe")
